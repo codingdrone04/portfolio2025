@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { MapPin, GraduationCap, Briefcase } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function AboutSection() {
+  const t = useTranslations('about');
+
   return (
     <section className="relative py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -18,7 +21,7 @@ export default function AboutSection() {
             paintOrder: 'stroke fill'
           }}
         >
-          About Me
+          {t('title')}
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -34,10 +37,10 @@ export default function AboutSection() {
               <div className="p-2 rounded-lg bg-white">
                 <MapPin className="w-6 h-6 text-pink-500" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Location</h3>
+              <h3 className="text-2xl font-bold text-white">{t('location.title')}</h3>
             </div>
-            <p className="text-white text-lg font-semibold mb-2">Bayonne → Bordeaux</p>
-            <p className="text-white/90">Originally from Bayonne, now based in Bordeaux pursuing my Master's in Software Development at Ynov.</p>
+            <p className="text-white text-lg font-semibold mb-2">{t('location.subtitle')}</p>
+            <p className="text-white/90">{t('location.description')}</p>
           </motion.div>
 
           {/* Education Card */}
@@ -52,20 +55,20 @@ export default function AboutSection() {
               <div className="p-2 rounded-lg bg-white">
                 <GraduationCap className="w-6 h-6 text-purple-500" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Education</h3>
+              <h3 className="text-2xl font-bold text-white">{t('education.title')}</h3>
             </div>
             <div className="space-y-3 text-white">
               <div>
                 <p className="font-bold">OpenClassrooms</p>
-                <p className="text-white/90 text-sm">Bac+2 - Web Development Foundations</p>
+                <p className="text-white/90 text-sm">{t('education.openclassrooms')}</p>
               </div>
               <div>
                 <p className="font-bold">Nexa Digital School</p>
-                <p className="text-white/90 text-sm">Bachelor - Full-Stack Development</p>
+                <p className="text-white/90 text-sm">{t('education.nexa')}</p>
               </div>
               <div>
                 <p className="font-bold">Ynov Bordeaux</p>
-                <p className="text-white/90 text-sm">Master's - Software Development</p>
+                <p className="text-white/90 text-sm">{t('education.ynov')}</p>
               </div>
             </div>
           </motion.div>
@@ -82,10 +85,10 @@ export default function AboutSection() {
               <div className="p-2 rounded-lg bg-white">
                 <Briefcase className="w-6 h-6 text-orange-500" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Work</h3>
+              <h3 className="text-2xl font-bold text-white">{t('work.title')}</h3>
             </div>
-            <p className="text-white text-lg font-semibold mb-2">Uncove - Apprentice Developer</p>
-            <p className="text-white/90">Building microservices with JavaScript, managing Docker & Kubernetes clusters, handling video encoding and transactions with ArangoDB. Maintaining React backoffice interfaces.</p>
+            <p className="text-white text-lg font-semibold mb-2">{t('work.position')}</p>
+            <p className="text-white/90">{t('work.description')}</p>
           </motion.div>
         </div>
 
@@ -98,7 +101,7 @@ export default function AboutSection() {
           className="mt-6 bg-white dark:bg-slate-800 rounded-2xl p-8 border-4 border-purple-500 shadow-[8px_8px_0px_0px_rgba(168,85,247,0.6)]"
         >
           <p className="text-xl text-slate-800 dark:text-white leading-relaxed text-center">
-            <span className="font-bold">My Philosophy:</span> Great software isn't just functional : it needs to be intuitive and pleasant to use. I build systems with clean architecture and scalable design, constantly exploring new technologies to solve complex challenges efficiently.
+            <span className="font-bold">{t('philosophy.label')}</span> {t('philosophy.text')}
           </p>
         </motion.div>
       </div>
