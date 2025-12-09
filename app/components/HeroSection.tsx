@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -18,6 +19,8 @@ const staggerContainer = {
 };
 
 export default function HeroSection() {
+  const t = useTranslations('hero');
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
       <motion.div
@@ -43,14 +46,14 @@ export default function HeroSection() {
             paintOrder: 'stroke fill'
           }}
         >
-          Hi, I'm Samuel
+          {t('greeting')}
         </motion.h1>
 
         <motion.p
           variants={fadeInUp}
           className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-8 max-w-2xl mx-auto font-semibold"
         >
-          Full-stack developer building scalable systems from frontend to microservices
+          {t('tagline')}
         </motion.p>
 
         <motion.div
@@ -61,13 +64,13 @@ export default function HeroSection() {
             href="#projects"
             className="px-8 py-3 bg-purple-500 dark:bg-pink-500 text-white rounded-2xl font-semibold hover:translate-y-[-4px] transition-all shadow-[6px_6px_0px_0px_rgba(168,85,247,0.6)] hover:shadow-[8px_8px_0px_0px_rgba(168,85,247,0.6)]"
           >
-            View Projects
+            {t('viewProjects')}
           </a>
           <a
             href="#contact"
             className="px-8 py-3 bg-white dark:bg-orange-400 text-purple-600 dark:text-white border-3 border-purple-500 dark:border-white rounded-2xl font-semibold hover:translate-y-[-4px] transition-all shadow-[6px_6px_0px_0px_rgba(236,72,153,0.6)] hover:shadow-[8px_8px_0px_0px_rgba(236,72,153,0.6)]"
           >
-            Get in Touch
+            {t('getInTouch')}
           </a>
         </motion.div>
 

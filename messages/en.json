@@ -1,0 +1,140 @@
+{
+  "hero": {
+    "greeting": "Hello, I'm Samuel",
+    "tagline": "Full-stack developer who designs scalable systems, from frontend to microservices",
+    "viewProjects": "See my projects",
+    "getInTouch": "Contact me"
+  },
+  "about": {
+    "title": "About",
+    "location": {
+      "title": "Localisation",
+      "subtitle": "Bayonne → Bordeaux",
+      "description": "Originally from Bayonne, I am now based in Bordeaux where I am pursuing my Masters in Software Development at Ynov."
+    },
+    "education": {
+      "title": "Formation",
+      "openclassrooms": "Bac+2 - Fundamentals of web development",
+      "nexa": "Bachelor - Full-Stack Development",
+      "ynov": "Master - Software Development"
+    },
+    "work": {
+      "title": "Experience",
+      "position": "Uncove - Apprentice Developer",
+      "description": "Design of microservices in JavaScript, management of Docker & Kubernetes clusters, video encoding processing and transactions with ArangoDB. Maintenance of React backoffice interfaces."
+    },
+    "philosophy": {
+      "label": "My philosophy:",
+      "text": "Good software is not only functional: it must be intuitive and pleasant to use. I design systems with clean architecture and scalable design, constantly exploring new technologies to efficiently solve complex challenges."
+    }
+  },
+  "skills": {
+    "title": "SKILLS",
+    "backend": {
+      "name": "Backend & Microservices",
+      "items": [
+        "Java",
+        "Spring Boot",
+        "Node.js",
+        "API REST",
+        "Microservices"
+      ]
+    },
+    "frontend": {
+      "name": "Frontend & Mobile",
+      "items": [
+        "React",
+        "React Native",
+        "JavaScript",
+        "Sass",
+        "Design Responsive"
+      ]
+    },
+    "data": {
+      "name": "Data & Tools",
+      "items": [
+        "MongoDB",
+        "ArangoDB",
+        "Git",
+        "Agile",
+        "System architecture"
+      ]
+    }
+  },
+  "projects": {
+    "title": "Flagship projects",
+    "items": [
+      {
+        "title": "Rock-Paper-Scissors Microservice",
+        "description": "A distributed microservices architecture built in Java implementing classic gaming. Includes service discovery, load balancing, and inter-service communication. This project demonstrates enterprise-level design patterns and scalable system architecture, showcasing my ability to build robust backend systems with clear separation of concerns.",
+        "tags": [
+          "Java",
+          "Microservices",
+          "Spring Boot",
+          "API REST"
+        ],
+        "link": "https://github.com/codingdrone04/rock-paper-scissors-microservice"
+      },
+      {
+        "title": "My Old Grimoire",
+        "description": "A full-stack book rating platform with user authentication, CRUD operations and image upload functionality. Built with Node.js and Express for the backend with MongoDB for data persistence. Implements secure authentication flows and optimized image management, demonstrating my competence in building complete web applications from database to interface.",
+        "tags": [
+          "JavaScript",
+          "Node.js",
+          "MongoDB",
+          "Express"
+        ],
+        "link": "https://github.com/codingdrone04/Mon-vieux-grimoire"
+      },
+      {
+        "title": "Backend Go Fullstack",
+        "description": "A complete backend API featuring RESTful architecture and database integration. Includes robust error handling, data validation and secure authentication mechanisms. This project helped me deepen my understanding of backend development best practices and API design principles, bridging the gap between frontend and backend development.",
+        "tags": [
+          "JavaScript",
+          "Node.js",
+          "API REST",
+          "MongoDB"
+        ],
+        "link": "https://github.com/codingdrone04/go-fullstack-backend"
+      },
+      {
+        "title": "Library app",
+        "description": "An interactive library management system built in vanilla JavaScript, focused on DOM manipulation and local storage. Includes book tracking, reading status updating, and persistent data storage. This project strengthened my fundamental JavaScript skills and understanding of browser APIs before moving on to modern frameworks.",
+        "tags": [
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "Local Storage"
+        ],
+        "link": "https://github.com/codingdrone04/library-app"
+      },
+      {
+        "title": "Plantanin / Tsarbucks",
+        "description": "A Java-based application simulating a coffee ordering system with inventory management. Implements object-oriented programming principles, design patterns and clean code architecture. This project strengthened my foundation in Java and taught me how to build maintainable and scalable applications with proper abstraction and encapsulation.",
+        "tags": [
+          "Java",
+          "POO",
+          "Design Patterns"
+        ],
+        "link": "https://github.com/codingdrone04/Plantanin"
+      },
+      {
+        "title": "Site Portfolio Personnel",
+        "description": "A modern, responsive portfolio site built with Sass for advanced styling capabilities. Features a modular CSS architecture with variables, mixins, and nesting for maintainable style sheets. Demonstrates my proficiency in CSS preprocessing and responsive design principles, creating a polished user experience across all devices.",
+        "tags": [
+          "SCSS",
+          "HTML",
+          "Design Responsive"
+        ],
+        "link": "https://github.com/codingdrone04/mysite"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact me",
+    "description": "I am always open to new opportunities and collaborations. Whether you have a project in mind or just want to talk tech, don't hesitate to contact me!"
+  },
+  "footer": {
+    "builtWith": "Developed with Next.js and deployed on Vercel"
+  }
+}

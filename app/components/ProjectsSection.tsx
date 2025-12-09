@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface Project {
   title: string;
@@ -10,46 +11,10 @@ interface Project {
   link: string;
 }
 
-const projects: Project[] = [
-  {
-    title: "Rock Paper Scissors Microservice",
-    description: "A distributed microservices architecture built with Java implementing the classic game. Features service discovery, load balancing, and inter-service communication. This project demonstrates enterprise-level design patterns and scalable system architecture, showcasing my ability to build robust backend systems with clean separation of concerns.",
-    tags: ["Java", "Microservices", "Spring Boot", "REST API"],
-    link: "https://github.com/codingdrone04/rock-paper-scissors-microservice"
-  },
-  {
-    title: "Mon Vieux Grimoire",
-    description: "A full-stack book rating platform featuring user authentication, CRUD operations, and image upload functionality. Built with Node.js and Express on the backend with MongoDB for data persistence. Implements secure authentication flows and optimized image handling, demonstrating proficiency in building complete web applications from database to UI.",
-    tags: ["JavaScript", "Node.js", "MongoDB", "Express"],
-    link: "https://github.com/codingdrone04/Mon-vieux-grimoire"
-  },
-  {
-    title: "Go Fullstack Backend",
-    description: "A comprehensive backend API showcasing RESTful architecture and database integration. Features robust error handling, data validation, and secure authentication mechanisms. This project helped me deepen my understanding of backend development best practices and API design principles, bridging the gap between frontend and backend development.",
-    tags: ["JavaScript", "Node.js", "REST API", "MongoDB"],
-    link: "https://github.com/codingdrone04/go-fullstack-backend"
-  },
-  {
-    title: "Library App",
-    description: "An interactive library management system built with vanilla JavaScript, focusing on DOM manipulation and local storage. Features book tracking, reading status updates, and persistent data storage. This project strengthened my foundational JavaScript skills and understanding of browser APIs before transitioning to modern frameworks.",
-    tags: ["JavaScript", "HTML", "CSS", "Local Storage"],
-    link: "https://github.com/codingdrone04/library-app"
-  },
-  {
-    title: "Plantanin / Tsarbucks",
-    description: "A Java-based application simulating a coffee shop ordering system with inventory management. Implements object-oriented programming principles, design patterns, and clean code architecture. This project reinforced my Java fundamentals and taught me about building maintainable, scalable applications with proper abstraction and encapsulation.",
-    tags: ["Java", "OOP", "Design Patterns"],
-    link: "https://github.com/codingdrone04/Plantanin"
-  },
-  {
-    title: "Personal Portfolio Site",
-    description: "A modern, responsive portfolio website built with Sass for advanced styling capabilities. Features modular CSS architecture with variables, mixins, and nesting for maintainable stylesheets. Demonstrates proficiency in CSS preprocessing and responsive design principles, creating a polished user experience across all devices.",
-    tags: ["SCSS", "HTML", "Responsive Design"],
-    link: "https://github.com/codingdrone04/mysite"
-  }
-];
-
 export default function ProjectsSection() {
+  const t = useTranslations('projects');
+  const projects = t.raw('items') as Project[];
+
   return (
     <section id="projects" className="relative py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -64,11 +29,11 @@ export default function ProjectsSection() {
             paintOrder: 'stroke fill'
           }}
         >
-          Featured Projects
+          {t('title')}
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {projects.map((project: Project, index: number) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 20 }}
