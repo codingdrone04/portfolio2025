@@ -4,6 +4,7 @@ import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import ThemeProvider from "../components/ThemeProvider";
 import "../globals.css";
+import GlorpWidget from "../components/GlorpWidget";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,11 +34,12 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
       >
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             {children}
+            <GlorpWidget />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
