@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function ContactSection() {
+  const t = useTranslations('contact');
+
   return (
     <section id="contact" className="relative py-20 px-4">
       <div className="max-w-4xl mx-auto text-center">
@@ -15,10 +18,10 @@ export default function ContactSection() {
           className="bg-orange-500 dark:bg-purple-600 rounded-3xl p-12 shadow-[12px_12px_0px_0px_rgba(251,146,60,0.5)]"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Let's Build Something Great
+            {t('title')}
           </h2>
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            I'm always interested in discussing new projects, collaborative opportunities, or innovative ideas. Whether you need a full-stack developer for your team or want to explore a technical challenge together, I'd love to hear from you.
+            {t('description')}
           </p>
 
           <a
@@ -26,7 +29,7 @@ export default function ContactSection() {
             className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-pink-500 text-orange-600 dark:text-white rounded-2xl font-bold text-lg hover:translate-y-[-4px] transition-all shadow-[6px_6px_0px_0px_rgba(168,85,247,0.6)]"
           >
             <Mail className="w-5 h-5" />
-            Get in Touch
+            {t('title')}
           </a>
         </motion.div>
       </div>
