@@ -7,42 +7,42 @@ import "../globals.css";
 import GlorpWidget from "../components/GlorpWidget";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+	variable: "--font-geist-sans",
+	subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+	variable: "--font-geist-mono",
+	subsets: ["latin"],
 });
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+	return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function LocaleLayout({
-  children,
-  params,
+	children,
+	params,
 }: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+	children: React.ReactNode;
+	params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+	const { locale } = await params;
 
-  const messages = await getMessages();
+	const messages = await getMessages();
 
-  return (
-    <html lang={locale} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
-      >
-        <ThemeProvider>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-            <GlorpWidget />
-          </NextIntlClientProvider>
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+	return (
+		<html lang={locale} suppressHydrationWarning>
+			<body
+				className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
+			>
+				<ThemeProvider>
+					<NextIntlClientProvider messages={messages}>
+						{children}
+						<GlorpWidget />
+					</NextIntlClientProvider>
+				</ThemeProvider>
+			</body>
+		</html>
+	);
 }
