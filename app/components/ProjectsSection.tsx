@@ -39,8 +39,8 @@ export default function ProjectsSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group p-6 rounded-2xl bg-white dark:bg-orange-900 border-4 border-pink-500 dark:border-orange-300 hover:translate-y-[-4px] transition-all shadow-[8px_8px_0px_0px_rgba(236,72,153,0.5)] dark:shadow-[8px_8px_0px_0px_rgba(251,146,60,0.4)]"
+              viewport={{ once: true, amount: 0.3 }}
+              className="group p-6 rounded-2xl bg-white dark:bg-orange-900 border-4 border-pink-500 dark:border-orange-300 hover:translate-y-[-4px] transition-transform shadow-[8px_8px_0px_0px_rgba(236,72,153,0.5)] dark:shadow-[8px_8px_0px_0px_rgba(251,146,60,0.4)]"
             >
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold text-pink-600 dark:text-white">
