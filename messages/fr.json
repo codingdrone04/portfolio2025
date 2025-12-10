@@ -1,112 +1,100 @@
 {
-  "hero": {
-    "greeting": "Salut, moi c'est Samuel",
-    "tagline": "Développeur full-stack qui conçoit des systèmes évolutifs, du frontend aux microservices",
-    "viewProjects": "Voir mes projets",
-    "getInTouch": "Me contacter"
-  },
-  "about": {
-    "title": "À propos",
-    "location": {
-      "title": "Localisation",
-      "subtitle": "Bayonne → Bordeaux",
-      "description": "Originaire de Bayonne, je suis maintenant basé à Bordeaux où je poursuis mon Master en Développement Logiciel à Ynov."
-    },
-    "education": {
-      "title": "Formation",
-      "openclassrooms": "Bac+2 - Fondamentaux du développement web",
-      "nexa": "Bachelor - Développement Full-Stack",
-      "ynov": "Master - Développement Logiciel"
-    },
-    "work": {
-      "title": "Expérience",
-      "position": "Uncove - Développeur en Alternance",
-      "description": "Conception de microservices en JavaScript, gestion de clusters Docker & Kubernetes, traitement d'encodage vidéo et transactions avec ArangoDB. Maintenance d'interfaces backoffice React."
-    },
-    "philosophy": {
-      "label": "Ma philosophie :",
-      "text": "Un bon logiciel n'est pas seulement fonctionnel : il doit être intuitif et agréable à utiliser. Je conçois des systèmes avec une architecture propre et un design évolutif, en explorant constamment de nouvelles technologies pour résoudre efficacement des défis complexes."
-    }
-  },
-  "skills": {
-    "title": "Compétences",
-    "backend": {
-      "name": "Backend & Microservices",
-      "items": [
-        "Java",
-        "Spring Boot",
-        "Node.js",
-        "API REST",
-        "Microservices"
-      ]
-    },
-    "frontend": {
-      "name": "Frontend & Mobile",
-      "items": [
-        "React",
-        "React Native",
-        "JavaScript",
-        "Sass",
-        "Design Responsive"
-      ]
-    },
-    "data": {
-      "name": "Data & Outils",
-      "items": [
-        "MongoDB",
-        "ArangoDB",
-        "Git",
-        "Agile",
-        "Architecture système"
-      ]
-    }
-  },
-  "projects": {
-    "title": "Projets phares",
-    "items": [
-      {
-        "title": "Microservice Pierre-Papier-Ciseaux",
-        "description": "Une architecture de microservices distribuée construite en Java implémentant le jeu classique. Comprend la découverte de services, l'équilibrage de charge et la communication inter-services. Ce projet démontre des patterns de conception de niveau entreprise et une architecture système évolutive, mettant en valeur ma capacité à construire des systèmes backend robustes avec une séparation claire des préoccupations.",
-        "tags": ["Java", "Microservices", "Spring Boot", "API REST"],
-        "link": "https://github.com/codingdrone04/rock-paper-scissors-microservice"
-      },
-      {
-        "title": "Mon Vieux Grimoire",
-        "description": "Une plateforme full-stack de notation de livres avec authentification utilisateur, opérations CRUD et fonctionnalité de téléchargement d'images. Construit avec Node.js et Express pour le backend avec MongoDB pour la persistance des données. Implémente des flux d'authentification sécurisés et une gestion optimisée des images, démontrant ma compétence à construire des applications web complètes de la base de données à l'interface.",
-        "tags": ["JavaScript", "Node.js", "MongoDB", "Express"],
-        "link": "https://github.com/codingdrone04/Mon-vieux-grimoire"
-      },
-      {
-        "title": "Backend Go Fullstack",
-        "description": "Une API backend complète présentant une architecture RESTful et une intégration de base de données. Comprend une gestion robuste des erreurs, une validation des données et des mécanismes d'authentification sécurisés. Ce projet m'a aidé à approfondir ma compréhension des meilleures pratiques de développement backend et des principes de conception d'API, comblant le fossé entre le développement frontend et backend.",
-        "tags": ["JavaScript", "Node.js", "API REST", "MongoDB"],
-        "link": "https://github.com/codingdrone04/go-fullstack-backend"
-      },
-      {
-        "title": "Application Bibliothèque",
-        "description": "Un système de gestion de bibliothèque interactif construit en JavaScript vanilla, axé sur la manipulation du DOM et le stockage local. Comprend le suivi des livres, la mise à jour du statut de lecture et le stockage persistant des données. Ce projet a renforcé mes compétences fondamentales en JavaScript et ma compréhension des API du navigateur avant de passer aux frameworks modernes.",
-        "tags": ["JavaScript", "HTML", "CSS", "Local Storage"],
-        "link": "https://github.com/codingdrone04/library-app"
-      },
-      {
-        "title": "Plantanin / Tsarbucks",
-        "description": "Une application basée sur Java simulant un système de commande de café avec gestion d'inventaire. Implémente les principes de programmation orientée objet, les patterns de conception et une architecture de code propre. Ce projet a renforcé mes bases en Java et m'a appris à construire des applications maintenables et évolutives avec une abstraction et une encapsulation appropriées.",
-        "tags": ["Java", "POO", "Design Patterns"],
-        "link": "https://github.com/codingdrone04/Plantanin"
-      },
-      {
-        "title": "Site Portfolio Personnel",
-        "description": "Un site portfolio moderne et responsive construit avec Sass pour des capacités de style avancées. Présente une architecture CSS modulaire avec des variables, mixins et imbrication pour des feuilles de style maintenables. Démontre ma compétence en préprocessing CSS et principes de design responsive, créant une expérience utilisateur soignée sur tous les appareils.",
-        "tags": ["SCSS", "HTML", "Design Responsive"],
-        "link": "https://github.com/codingdrone04/mysite"
-      }
-    ]
-  },
-  "contact": {
-    "title": "Me contacter",
-    "description": "Je suis toujours ouvert à de nouvelles opportunités et collaborations. Que vous ayez un projet en tête ou que vous vouliez simplement discuter tech, n'hésitez pas à me contacter !"
-  },
-  "footer": {
-    "builtWith": "Développé avec Next.js et déployé sur Vercel"
-  }
+	"hero": {
+		"greeting": "Salut, moi c'est Samuel",
+		"tagline": "Développeur full-stack qui conçoit des systèmes évolutifs, du frontend aux microservices",
+		"viewProjects": "Voir mes projets",
+		"getInTouch": "Me contacter"
+	},
+	"about": {
+		"title": "À propos",
+		"location": {
+			"title": "Localisation",
+			"subtitle": "Bayonne → Bordeaux",
+			"description": "Originaire de Bayonne, je suis maintenant basé à Bordeaux où je poursuis mon Master en Développement Logiciel à Ynov."
+		},
+		"education": {
+			"title": "Formation",
+			"openclassrooms": "Bac+2 - Fondamentaux du développement web",
+			"nexa": "Bachelor - Développement Full-Stack",
+			"ynov": "Master - Développement Logiciel"
+		},
+		"work": {
+			"title": "Expérience",
+			"position": "Uncove - Développeur en Alternance",
+			"description": "Conception de microservices en JavaScript, gestion de clusters Docker & Kubernetes, traitement d'encodage vidéo et transactions avec ArangoDB. Maintenance d'interfaces backoffice React."
+		},
+		"philosophy": {
+			"label": "Ma philosophie :",
+			"text": "Un bon logiciel n'est pas seulement fonctionnel : il doit être intuitif et agréable à utiliser. Je conçois des systèmes avec une architecture propre et un design évolutif, en explorant constamment de nouvelles technologies pour résoudre efficacement des défis complexes."
+		}
+	},
+	"skills": {
+		"title": "Compétences",
+		"backend": {
+			"name": "Backend & Microservices",
+			"items": ["Java", "Spring Boot", "Node.js", "API REST", "Microservices"]
+		},
+		"frontend": {
+			"name": "Frontend & Mobile",
+			"items": [
+				"React",
+				"React Native",
+				"JavaScript",
+				"Sass",
+				"Design Responsive"
+			]
+		},
+		"data": {
+			"name": "Data & Outils",
+			"items": ["MongoDB", "ArangoDB", "Git", "Agile", "Architecture système"]
+		}
+	},
+	"projects": {
+		"title": "Projets phares",
+		"items": [
+			{
+				"title": "Microservice Pierre-Papier-Ciseaux",
+				"description": "Une architecture de microservices distribuée construite en Java implémentant le jeu classique. Comprend la découverte de services, l'équilibrage de charge et la communication inter-services. Ce projet démontre des patterns de conception de niveau entreprise et une architecture système évolutive, mettant en valeur ma capacité à construire des systèmes backend robustes avec une séparation claire des préoccupations.",
+				"tags": ["Java", "Microservices", "Spring Boot", "API REST"],
+				"link": "https://github.com/codingdrone04/rock-paper-scissors-microservice"
+			},
+			{
+				"title": "Mon Vieux Grimoire",
+				"description": "Une plateforme full-stack de notation de livres avec authentification utilisateur, opérations CRUD et fonctionnalité de téléchargement d'images. Construit avec Node.js et Express pour le backend avec MongoDB pour la persistance des données. Implémente des flux d'authentification sécurisés et une gestion optimisée des images, démontrant ma compétence à construire des applications web complètes de la base de données à l'interface.",
+				"tags": ["JavaScript", "Node.js", "MongoDB", "Express"],
+				"link": "https://github.com/codingdrone04/Mon-vieux-grimoire"
+			},
+			{
+				"title": "Backend Go Fullstack",
+				"description": "Une API backend complète présentant une architecture RESTful et une intégration de base de données. Comprend une gestion robuste des erreurs, une validation des données et des mécanismes d'authentification sécurisés. Ce projet m'a aidé à approfondir ma compréhension des meilleures pratiques de développement backend et des principes de conception d'API, comblant le fossé entre le développement frontend et backend.",
+				"tags": ["JavaScript", "Node.js", "API REST", "MongoDB"],
+				"link": "https://github.com/codingdrone04/go-fullstack-backend"
+			},
+			{
+				"title": "Application Bibliothèque",
+				"description": "Un système de gestion de bibliothèque interactif construit en JavaScript vanilla, axé sur la manipulation du DOM et le stockage local. Comprend le suivi des livres, la mise à jour du statut de lecture et le stockage persistant des données. Ce projet a renforcé mes compétences fondamentales en JavaScript et ma compréhension des API du navigateur avant de passer aux frameworks modernes.",
+				"tags": ["JavaScript", "HTML", "CSS", "Local Storage"],
+				"link": "https://github.com/codingdrone04/library-app"
+			},
+			{
+				"title": "Plantanin / Tsarbucks",
+				"description": "Une application basée sur Java simulant un système de commande de café avec gestion d'inventaire. Implémente les principes de programmation orientée objet, les patterns de conception et une architecture de code propre. Ce projet a renforcé mes bases en Java et m'a appris à construire des applications maintenables et évolutives avec une abstraction et une encapsulation appropriées.",
+				"tags": ["Java", "POO", "Design Patterns"],
+				"link": "https://github.com/codingdrone04/Plantanin"
+			},
+			{
+				"title": "Site Portfolio Personnel",
+				"description": "Un site portfolio moderne et responsive construit avec Sass pour des capacités de style avancées. Présente une architecture CSS modulaire avec des variables, mixins et imbrication pour des feuilles de style maintenables. Démontre ma compétence en préprocessing CSS et principes de design responsive, créant une expérience utilisateur soignée sur tous les appareils.",
+				"tags": ["SCSS", "HTML", "Design Responsive"],
+				"link": "https://github.com/codingdrone04/mysite"
+			}
+		]
+	},
+	"contact": {
+		"title": "Me contacter",
+		"description": "Je suis toujours ouvert à de nouvelles opportunités et collaborations. Que vous ayez un projet en tête ou que vous vouliez simplement discuter tech, n'hésitez pas à me contacter !"
+	},
+	"footer": {
+		"builtWith": "Développé avec Next.js et déployé sur Vercel"
+	}
 }
