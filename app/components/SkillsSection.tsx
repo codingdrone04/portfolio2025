@@ -44,8 +44,8 @@ export default function SkillsSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group p-6 rounded-2xl bg-white dark:bg-purple-900 border-4 border-purple-500 dark:border-pink-400 hover:translate-y-[-4px] transition-all shadow-[8px_8px_0px_0px_rgba(168,85,247,0.5)] dark:shadow-[8px_8px_0px_0px_rgba(236,72,153,0.4)]"
+                viewport={{ once: true, amount: 0.3 }}
+                className="group p-6 rounded-2xl bg-white dark:bg-purple-900 border-4 border-purple-500 dark:border-pink-400 hover:translate-y-[-4px] transition-transform shadow-[8px_8px_0px_0px_rgba(168,85,247,0.5)] dark:shadow-[8px_8px_0px_0px_rgba(236,72,153,0.4)]"
               >
                 <div className="p-3 rounded-xl bg-purple-500 dark:bg-pink-500 w-fit mb-4 shadow-[4px_4px_0px_0px_rgba(168,85,247,0.5)]">
                   <skill.icon className="w-8 h-8 text-white" />
