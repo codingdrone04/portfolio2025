@@ -3,15 +3,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const GLORP_IMAGES = [
-	"babyglorp.png",
-	"danceglorp.png",
-	"dogglorp.png",
-	"larryglorp.png",
-	"smolglorp.png",
-	"threeglorps.png",
-];
-
 const THINKING_BUBBLES = [
 	{ size: "w-2 h-2", top: "-top-12", right: "right-10", delay: "0s" },
 	{ size: "w-3 h-3", top: "-top-20", right: "right-6", delay: "0.5s" },
@@ -34,7 +25,24 @@ export default function GlorpWidget() {
 	const [isVisible, setIsVisible] = useState(true);
 	const [animationKey, setAnimationKey] = useState(0);
 	const [isResetting, setIsResetting] = useState(false);
+	const [glorpImages, setGlorpImages] = useState<string[]>([]);
 	const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
+
+	// Load glorp images from API
+	useEffect(() => {
+		const loadGlorps = async () => {
+			try {
+				const response = await fetch("/api/glorps");
+				const data = await response.json();
+				if (data.images) {
+					setGlorpImages(data.images);
+				}
+			} catch (error) {
+				console.error("Failed to load glorp images:", error);
+			}
+		};
+		loadGlorps();
+	}, []);
 
 	// Cleanup timeouts on unmount
 	useEffect(() => {
@@ -44,6 +52,9 @@ export default function GlorpWidget() {
 	}, []);
 
 	const generateGlorp = () => {
+		// Don't generate if no images are loaded
+		if (glorpImages.length === 0) return;
+
 		// Clear any existing timeouts
 		timeoutsRef.current.forEach(clearTimeout);
 		timeoutsRef.current = [];
@@ -68,7 +79,7 @@ export default function GlorpWidget() {
 				// Show thinking bubbles, then show the glorp
 				const timeout3 = setTimeout(() => {
 					// Pick a random glorp from the array
-					const randomIndex = Math.floor(Math.random() * GLORP_IMAGES.length);
+					const randomIndex = Math.floor(Math.random() * glorpImages.length);
 					setCurrentGlorpIndex(randomIndex);
 					setIsVisible(true);
 
@@ -141,18 +152,18 @@ export default function GlorpWidget() {
 				)}
 
 				{/* Generated glorp in a thought bubble */}
-				{currentGlorpIndex !== null && (
+				{currentGlorpIndex !== null && glorpImages[currentGlorpIndex] && (
 					<div
 						role="status"
 						aria-live="polite"
-						aria-label={`Generated Glorp: ${GLORP_IMAGES[currentGlorpIndex].replace(".png", "")}`}
+						aria-label={`Generated Glorp: ${glorpImages[currentGlorpIndex].replace(".png", "")}`}
 						className={`absolute -top-72 right-0 bg-blue-500 dark:bg-blue-600 border border-blue-500 dark:border-blue-400 shadow-xl p-4 transition-opacity duration-300 z-10 ${isVisible ? "opacity-100" : "opacity-0"}`}
 						style={{
 							borderRadius: "73% 27% 55% 45% / 42% 68% 32% 58%",
 						}}
 					>
 						<Image
-							src={`/glorps/${GLORP_IMAGES[currentGlorpIndex]}`}
+							src={`/glorps/${glorpImages[currentGlorpIndex]}`}
 							alt="Glorp"
 							width={128}
 							height={128}
