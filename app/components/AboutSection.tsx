@@ -1,126 +1,106 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap, MapPin } from "lucide-react";
+import { Briefcase, GraduationCap } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export default function AboutSection() {
 	const t = useTranslations("about");
 
+	const education = [
+		{ period: `2025 - ${t("present")}`, title: "Ynov Bordeaux", description: t("education.ynov") },
+		{ period: "2024 - 2025", title: "Nexa Digital School", description: t("education.nexa") },
+		{ period: "2023", title: "OpenClassrooms", description: t("education.openclassrooms") },
+		{ period: "2022", title: t("education.bordeaux.title"), description: t("education.bordeaux.description") },
+	];
+
+	const experience = [
+		{ period: `2024 - ${t("present")}`, title: "Uncove", role: t("experience.uncove.role"), description: t("experience.uncove.description") },
+		{ period: "2024", title: "Drivn", role: t("experience.drivn.role"), description: t("experience.drivn.description") },
+	];
+
 	return (
-		<section className="relative py-24 px-6 md:px-12 lg:px-20">
-			<div className="max-w-5xl mx-auto">
+		<section className="relative min-h-screen flex items-center py-24 px-6 md:px-12 lg:px-20">
+			<div className="max-w-4xl mx-auto w-full">
 				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className="mb-16"
+					className="mb-12"
 				>
 					<p className="text-[var(--accent)] font-medium tracking-wide mb-3 text-sm uppercase">
 						{t("title")}
 					</p>
-					<h2
-						className="text-4xl md:text-5xl tracking-tight"
-						style={{ fontFamily: "var(--font-display), sans-serif" }}
-					>
-						Background & Experience
-					</h2>
 				</motion.div>
 
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-					{/* Location Card */}
+				{/* Intro paragraph */}
+				<motion.p
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5 }}
+					viewport={{ once: true }}
+					className="text-lg leading-relaxed text-[var(--text-muted)] mb-16"
+				>
+					{t("intro")}
+				</motion.p>
+
+				<div className="grid md:grid-cols-2 gap-12 md:gap-16">
+					{/* Education */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
 						viewport={{ once: true }}
-						className="group"
 					>
-						<div className="flex items-center gap-3 mb-4">
-							<div className="p-2 border border-[var(--border)] text-[var(--accent)]">
-								<MapPin className="w-5 h-5" />
-							</div>
-							<h3 className="text-lg font-semibold">{t("location.title")}</h3>
+						<div className="flex items-center gap-3 mb-8">
+							<GraduationCap className="w-5 h-5 text-[var(--accent)]" />
+							<h3 className="font-semibold text-lg">{t("educationTitle")}</h3>
 						</div>
-						<p className="font-medium mb-1">{t("location.subtitle")}</p>
-						<p className="text-[var(--text-muted)] text-sm leading-relaxed">
-							{t("location.description")}
-						</p>
+
+						<div className="space-y-6">
+							{education.map((item) => (
+								<div key={item.period + item.title} className="group">
+									<span className="text-[var(--accent)] font-mono text-xs">
+										{item.period}
+									</span>
+									<h4 className="font-medium mt-0.5">{item.title}</h4>
+									<p className="text-[var(--text-muted)] text-sm mt-1">
+										{item.description}
+									</p>
+								</div>
+							))}
+						</div>
 					</motion.div>
 
-					{/* Education Card */}
+					{/* Experience */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.1 }}
 						viewport={{ once: true }}
-						className="group"
 					>
-						<div className="flex items-center gap-3 mb-4">
-							<div className="p-2 border border-[var(--border)] text-[var(--accent)]">
-								<GraduationCap className="w-5 h-5" />
-							</div>
-							<h3 className="text-lg font-semibold">{t("education.title")}</h3>
+						<div className="flex items-center gap-3 mb-8">
+							<Briefcase className="w-5 h-5 text-[var(--accent)]" />
+							<h3 className="font-semibold text-lg">{t("experienceTitle")}</h3>
 						</div>
-						<div className="space-y-3">
-							<div>
-								<p className="font-medium text-sm">OpenClassrooms</p>
-								<p className="text-[var(--text-muted)] text-xs">
-									{t("education.openclassrooms")}
-								</p>
-							</div>
-							<div>
-								<p className="font-medium text-sm">Nexa Digital School</p>
-								<p className="text-[var(--text-muted)] text-xs">
-									{t("education.nexa")}
-								</p>
-							</div>
-							<div>
-								<p className="font-medium text-sm">Ynov Bordeaux</p>
-								<p className="text-[var(--text-muted)] text-xs">
-									{t("education.ynov")}
-								</p>
-							</div>
-						</div>
-					</motion.div>
 
-					{/* Work Card */}
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5, delay: 0.2 }}
-						viewport={{ once: true }}
-						className="group"
-					>
-						<div className="flex items-center gap-3 mb-4">
-							<div className="p-2 border border-[var(--border)] text-[var(--accent)]">
-								<Briefcase className="w-5 h-5" />
-							</div>
-							<h3 className="text-lg font-semibold">{t("work.title")}</h3>
+						<div className="space-y-6">
+							{experience.map((item) => (
+								<div key={item.period + item.title} className="group">
+									<span className="text-[var(--accent)] font-mono text-xs">
+										{item.period}
+									</span>
+									<h4 className="font-medium mt-0.5">{item.title}</h4>
+									<p className="text-[var(--text-muted)] text-xs italic">{item.role}</p>
+									<p className="text-[var(--text-muted)] text-sm mt-1">
+										{item.description}
+									</p>
+								</div>
+							))}
 						</div>
-						<p className="font-medium mb-1">{t("work.position")}</p>
-						<p className="text-[var(--text-muted)] text-sm leading-relaxed">
-							{t("work.description")}
-						</p>
 					</motion.div>
 				</div>
-
-				{/* Philosophy */}
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.5, delay: 0.3 }}
-					viewport={{ once: true }}
-					className="border-l-2 border-[var(--accent)] pl-6 py-2"
-				>
-					<p className="text-lg text-[var(--text-muted)] leading-relaxed">
-						<span className="font-semibold text-[var(--foreground)]">
-							{t("philosophy.label")}
-						</span>{" "}
-						{t("philosophy.text")}
-					</p>
-				</motion.div>
 			</div>
 		</section>
 	);
