@@ -7,25 +7,41 @@
 	},
 	"about": {
 		"title": "About",
-		"location": {
-			"title": "Localisation",
-			"subtitle": "Bayonne → Bordeaux",
-			"description": "Originally from Bayonne, I am now based in Bordeaux where I am pursuing my Masters in Software Development at Ynov."
-		},
+		"intro": "Originally from Bayonne, I'm now based in Bordeaux pursuing my Master's in Software Development at Ynov, alongside my apprenticeship at Uncove.",
+		"present": "present",
+		"educationTitle": "Education",
+		"experienceTitle": "Experience",
 		"education": {
-			"title": "Formation",
-			"openclassrooms": "Bac+2 - Fundamentals of web development",
-			"nexa": "Bachelor - Full-Stack Development",
-			"ynov": "Master - Software Development"
+			"ynov": "Master's in Software Development",
+			"nexa": "Bachelor in Web Development",
+			"openclassrooms": "Web development training (Associate degree)",
+			"bordeaux": {
+				"title": "University of Bordeaux",
+				"description": "Computer Science degree (1st year)"
+			},
+			"pau": {
+				"title": "University of Pau",
+				"description": "IT Technical degree (1st year)"
+			}
 		},
-		"work": {
-			"title": "Experience",
-			"position": "Uncove - Apprentice Developer",
-			"description": "Design of microservices in JavaScript, management of Docker & Kubernetes clusters, video encoding processing and transactions with ArangoDB. Maintenance of React backoffice interfaces."
-		},
-		"philosophy": {
-			"label": "My philosophy:",
-			"text": "Good software is not only functional: it must be intuitive and pleasant to use. I design systems with clean architecture and scalable design, constantly exploring new technologies to efficiently solve complex challenges."
+		"experience": {
+			"uncove": {
+				"role": "Development & level 2 technical support",
+				"description": "ArangoDB administration in prod, Node.js microservices, GitLab CI/CD pipelines, fraud detection systems, React front-end maintenance."
+			},
+			"drivn": {
+				"role": "Front-end development internship",
+				"description": "Development and maintenance of a dashboard interface powered by generative AI."
+			},
+			"paries": {
+				"role": "Shop assistant",
+				"description": "Sales and customer service, stock management."
+			},
+			"civique": {
+				"title": "Civic Service",
+				"role": "Energy transition volunteer",
+				"description": "Gas safety prevention, eco-friendly practices awareness."
+			}
 		}
 	},
 	"skills": {
