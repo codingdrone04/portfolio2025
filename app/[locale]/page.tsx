@@ -29,7 +29,7 @@ export default function Home() {
 				<section className="snap-start">
 					<ProjectsSection />
 				</section>
-				<section className="snap-start">
+				<section className="snap-start h-screen flex flex-col">
 					<ContactSection />
 					<Footer />
 				</section>
