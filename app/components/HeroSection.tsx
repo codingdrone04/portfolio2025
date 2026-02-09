@@ -92,7 +92,7 @@ export default function HeroSection() {
 						</svg>
 					</a>
 					<a
-						href="mailto:contact@codingdrone04.dev"
+						href="mailto:codingdronecontact@proton.me"
 						className="text-[var(--text-muted)] hover:text-[var(--foreground)] transition-colors"
 						aria-label="Email"
 					>
