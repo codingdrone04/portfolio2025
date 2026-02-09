@@ -140,7 +140,7 @@ export default function GlorpWidget() {
 						{THINKING_BUBBLES.map((bubble, index) => (
 							<div
 								key={`bubble-${index + 1}-${animationKey}`}
-								className={`absolute ${bubble.top} ${bubble.right} ${bubble.size} bg-blue-500 dark:bg-blue-400 rounded-full opacity-0 shadow-md z-20`}
+								className={`absolute ${bubble.top} ${bubble.right} ${bubble.size} bg-accent rounded-full opacity-0 shadow-md z-20`}
 								style={{
 									animationDelay: bubble.delay,
 									animation: `fadeInBounce 0.5s ease-in ${bubble.delay} forwards, gentleBounce 2s ease-in-out ${bubble.delay} infinite`,
@@ -157,7 +157,7 @@ export default function GlorpWidget() {
 						role="status"
 						aria-live="polite"
 						aria-label={`Generated Glorp: ${glorpImages[currentGlorpIndex].replace(".png", "")}`}
-						className={`absolute -top-72 right-0 bg-blue-500 dark:bg-blue-600 border border-blue-500 dark:border-blue-400 shadow-xl p-4 transition-opacity duration-300 z-10 ${isVisible ? "opacity-100" : "opacity-0"}`}
+						className={`absolute -top-72 right-0 bg-accent border border-accent shadow-xl p-4 transition-opacity duration-300 z-10 ${isVisible ? "opacity-100" : "opacity-0"}`}
 						style={{
 							borderRadius: "73% 27% 55% 45% / 42% 68% 32% 58%",
 						}}
