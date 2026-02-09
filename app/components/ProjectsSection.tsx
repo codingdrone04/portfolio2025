@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 interface Project {
@@ -16,45 +16,47 @@ export default function ProjectsSection() {
 	const projects = t.raw("items") as Project[];
 
 	return (
-		<section id="projects" className="relative py-20 px-4">
-			<div className="max-w-6xl mx-auto">
-				<motion.h2
+		<section id="projects" className="relative py-24 px-6 md:px-12 lg:px-20">
+			<div className="max-w-5xl mx-auto">
+				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className="text-4xl md:text-5xl font-bold mb-12 text-center text-white"
-					style={{
-						WebkitTextStroke: "4px rgba(0, 0, 0, 0.8)",
-						paintOrder: "stroke fill",
-					}}
+					className="mb-16"
 				>
-					{t("title")}
-				</motion.h2>
+					<p className="text-[var(--accent)] font-medium tracking-wide mb-3 text-sm uppercase">
+						Work
+					</p>
+					<h2
+						className="text-4xl md:text-5xl tracking-tight"
+						style={{ fontFamily: "var(--font-display), sans-serif" }}
+					>
+						{t("title")}
+					</h2>
+				</motion.div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 					{projects.map((project: Project, index: number) => (
-						<motion.div
+						<motion.a
 							key={project.title}
+							href={project.link}
+							target="_blank"
+							rel="noopener noreferrer"
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							viewport={{ once: true, amount: 0.3 }}
-							className="group p-6 rounded-2xl bg-white dark:bg-orange-900 border-4 border-pink-500 dark:border-orange-300 hover:translate-y-[-4px] transition-transform shadow-[8px_8px_0px_0px_rgba(236,72,153,0.5)] dark:shadow-[8px_8px_0px_0px_rgba(251,146,60,0.4)]"
+							className="group block p-6 border border-[var(--border)] hover:border-[var(--accent)] transition-colors"
 						>
 							<div className="flex justify-between items-start mb-4">
-								<h3 className="text-xl font-bold text-pink-600 dark:text-white">
+								<h3 className="text-lg font-semibold group-hover:text-[var(--accent)] transition-colors">
 									{project.title}
 								</h3>
-								<a
-									href={project.link}
-									className="p-2 rounded-lg bg-pink-500 dark:bg-orange-400 text-white hover:translate-y-[-2px] transition-transform shadow-[3px_3px_0px_0px_rgba(236,72,153,0.6)]"
-								>
-									<ExternalLink className="w-4 h-4" />
-								</a>
+								<ArrowUpRight className="w-4 h-4 text-[var(--text-muted)] group-hover:text-[var(--accent)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
 							</div>
 
-							<p className="text-gray-700 dark:text-orange-100 mb-4 text-sm">
+							<p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">
 								{project.description}
 							</p>
 
@@ -62,13 +64,13 @@ export default function ProjectsSection() {
 								{project.tags.map((tag) => (
 									<span
 										key={tag}
-										className="px-3 py-1 text-xs font-semibold rounded-full bg-pink-100 dark:bg-orange-700 text-pink-700 dark:text-white border-2 border-pink-500 dark:border-orange-400"
+										className="px-2 py-1 text-xs text-[var(--text-muted)] border border-[var(--border)]"
 									>
 										{tag}
 									</span>
 								))}
 							</div>
-						</motion.div>
+						</motion.a>
 					))}
 				</div>
 			</div>

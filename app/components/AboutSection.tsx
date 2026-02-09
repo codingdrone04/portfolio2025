@@ -8,43 +8,45 @@ export default function AboutSection() {
 	const t = useTranslations("about");
 
 	return (
-		<section className="relative py-20 px-4">
-			<div className="max-w-6xl mx-auto">
-				<motion.h2
+		<section className="relative py-24 px-6 md:px-12 lg:px-20">
+			<div className="max-w-5xl mx-auto">
+				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className="text-4xl md:text-5xl font-bold mb-12 text-center text-white"
-					style={{
-						WebkitTextStroke: "4px rgba(0, 0, 0, 0.8)",
-						paintOrder: "stroke fill",
-					}}
+					className="mb-16"
 				>
-					{t("title")}
-				</motion.h2>
+					<p className="text-[var(--accent)] font-medium tracking-wide mb-3 text-sm uppercase">
+						{t("title")}
+					</p>
+					<h2
+						className="text-4xl md:text-5xl tracking-tight"
+						style={{ fontFamily: "var(--font-display), sans-serif" }}
+					>
+						Background & Experience
+					</h2>
+				</motion.div>
 
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
 					{/* Location Card */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
 						viewport={{ once: true }}
-						className="bg-pink-500 dark:bg-pink-600 rounded-2xl p-6 border-4 border-white shadow-[8px_8px_0px_0px_rgba(236,72,153,0.6)]"
+						className="group"
 					>
 						<div className="flex items-center gap-3 mb-4">
-							<div className="p-2 rounded-lg bg-white">
-								<MapPin className="w-6 h-6 text-pink-500" />
+							<div className="p-2 border border-[var(--border)] text-[var(--accent)]">
+								<MapPin className="w-5 h-5" />
 							</div>
-							<h3 className="text-2xl font-bold text-white">
-								{t("location.title")}
-							</h3>
+							<h3 className="text-lg font-semibold">{t("location.title")}</h3>
 						</div>
-						<p className="text-white text-lg font-semibold mb-2">
-							{t("location.subtitle")}
+						<p className="font-medium mb-1">{t("location.subtitle")}</p>
+						<p className="text-[var(--text-muted)] text-sm leading-relaxed">
+							{t("location.description")}
 						</p>
-						<p className="text-white/90">{t("location.description")}</p>
 					</motion.div>
 
 					{/* Education Card */}
@@ -53,30 +55,32 @@ export default function AboutSection() {
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.1 }}
 						viewport={{ once: true }}
-						className="bg-purple-500 dark:bg-purple-600 rounded-2xl p-6 border-4 border-white shadow-[8px_8px_0px_0px_rgba(168,85,247,0.6)]"
+						className="group"
 					>
 						<div className="flex items-center gap-3 mb-4">
-							<div className="p-2 rounded-lg bg-white">
-								<GraduationCap className="w-6 h-6 text-purple-500" />
+							<div className="p-2 border border-[var(--border)] text-[var(--accent)]">
+								<GraduationCap className="w-5 h-5" />
 							</div>
-							<h3 className="text-2xl font-bold text-white">
-								{t("education.title")}
-							</h3>
+							<h3 className="text-lg font-semibold">{t("education.title")}</h3>
 						</div>
-						<div className="space-y-3 text-white">
+						<div className="space-y-3">
 							<div>
-								<p className="font-bold">OpenClassrooms</p>
-								<p className="text-white/90 text-sm">
+								<p className="font-medium text-sm">OpenClassrooms</p>
+								<p className="text-[var(--text-muted)] text-xs">
 									{t("education.openclassrooms")}
 								</p>
 							</div>
 							<div>
-								<p className="font-bold">Nexa Digital School</p>
-								<p className="text-white/90 text-sm">{t("education.nexa")}</p>
+								<p className="font-medium text-sm">Nexa Digital School</p>
+								<p className="text-[var(--text-muted)] text-xs">
+									{t("education.nexa")}
+								</p>
 							</div>
 							<div>
-								<p className="font-bold">Ynov Bordeaux</p>
-								<p className="text-white/90 text-sm">{t("education.ynov")}</p>
+								<p className="font-medium text-sm">Ynov Bordeaux</p>
+								<p className="text-[var(--text-muted)] text-xs">
+									{t("education.ynov")}
+								</p>
 							</div>
 						</div>
 					</motion.div>
@@ -87,33 +91,33 @@ export default function AboutSection() {
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.2 }}
 						viewport={{ once: true }}
-						className="bg-orange-500 dark:bg-orange-600 rounded-2xl p-6 border-4 border-white shadow-[8px_8px_0px_0px_rgba(251,146,60,0.6)]"
+						className="group"
 					>
 						<div className="flex items-center gap-3 mb-4">
-							<div className="p-2 rounded-lg bg-white">
-								<Briefcase className="w-6 h-6 text-orange-500" />
+							<div className="p-2 border border-[var(--border)] text-[var(--accent)]">
+								<Briefcase className="w-5 h-5" />
 							</div>
-							<h3 className="text-2xl font-bold text-white">
-								{t("work.title")}
-							</h3>
+							<h3 className="text-lg font-semibold">{t("work.title")}</h3>
 						</div>
-						<p className="text-white text-lg font-semibold mb-2">
-							{t("work.position")}
+						<p className="font-medium mb-1">{t("work.position")}</p>
+						<p className="text-[var(--text-muted)] text-sm leading-relaxed">
+							{t("work.description")}
 						</p>
-						<p className="text-white/90">{t("work.description")}</p>
 					</motion.div>
 				</div>
 
-				{/* Philosophy Card */}
+				{/* Philosophy */}
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.3 }}
 					viewport={{ once: true }}
-					className="mt-6 bg-white dark:bg-slate-800 rounded-2xl p-8 border-4 border-purple-500 shadow-[8px_8px_0px_0px_rgba(168,85,247,0.6)]"
+					className="border-l-2 border-[var(--accent)] pl-6 py-2"
 				>
-					<p className="text-xl text-slate-800 dark:text-white leading-relaxed text-center">
-						<span className="font-bold">{t("philosophy.label")}</span>{" "}
+					<p className="text-lg text-[var(--text-muted)] leading-relaxed">
+						<span className="font-semibold text-[var(--foreground)]">
+							{t("philosophy.label")}
+						</span>{" "}
 						{t("philosophy.text")}
 					</p>
 				</motion.div>

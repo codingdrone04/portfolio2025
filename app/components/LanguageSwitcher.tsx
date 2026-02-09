@@ -1,9 +1,9 @@
 "use client";
 
+import { usePathname, useRouter } from "@/i18n/routing";
 import { Languages } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useState } from "react";
-import { usePathname, useRouter } from "@/i18n/routing";
 
 export default function LanguageSwitcher() {
 	const locale = useLocale();
@@ -12,11 +12,9 @@ export default function LanguageSwitcher() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const languages = [
-		{ code: "en", name: "English", flag: "🇬🇧" },
-		{ code: "fr", name: "Français", flag: "🇫🇷" },
+		{ code: "en", name: "EN" },
+		{ code: "fr", name: "FR" },
 	];
-
-	const currentLanguage = languages.find((lang) => lang.code === locale);
 
 	const handleLanguageChange = (newLocale: string) => {
 		router.replace(pathname, { locale: newLocale });
@@ -26,28 +24,29 @@ export default function LanguageSwitcher() {
 	return (
 		<div className="fixed top-6 left-6 z-50">
 			<button
+				type="button"
 				onClick={() => setIsOpen(!isOpen)}
-				className="p-3 rounded-full bg-white dark:bg-slate-800 border-4 border-orange-500 shadow-lg hover:shadow-xl transition-all hover:scale-110 active:scale-95 flex items-center gap-2"
+				className="p-2.5 border border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)] transition-colors flex items-center gap-2"
 				aria-label="Change language"
 			>
-				<Languages className="w-6 h-6 text-orange-500" />
-				<span className="text-lg">{currentLanguage?.flag}</span>
+				<Languages className="w-5 h-5" />
+				<span className="text-sm font-medium uppercase">{locale}</span>
 			</button>
 
 			{isOpen && (
-				<div className="absolute top-16 left-0 bg-white dark:bg-slate-800 border-4 border-orange-500 rounded-2xl shadow-xl overflow-hidden">
+				<div className="absolute top-12 left-0 bg-[var(--background)] border border-[var(--border)] overflow-hidden">
 					{languages.map((lang) => (
 						<button
+							type="button"
 							key={lang.code}
 							onClick={() => handleLanguageChange(lang.code)}
-							className={`w-full px-6 py-3 flex items-center gap-3 hover:bg-orange-100 dark:hover:bg-slate-700 transition-colors ${
-								locale === lang.code ? "bg-orange-50 dark:bg-slate-700" : ""
+							className={`w-full px-4 py-2 text-sm font-medium text-left hover:bg-[var(--accent-muted)] transition-colors ${
+								locale === lang.code
+									? "text-[var(--accent)]"
+									: "text-[var(--foreground)]"
 							}`}
 						>
-							<span className="text-2xl">{lang.flag}</span>
-							<span className="font-semibold text-slate-800 dark:text-white">
-								{lang.name}
-							</span>
+							{lang.name}
 						</button>
 					))}
 				</div>

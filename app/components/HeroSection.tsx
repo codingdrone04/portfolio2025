@@ -1,19 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Zap } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const fadeInUp = {
 	initial: { opacity: 0, y: 20 },
 	animate: { opacity: 1, y: 0 },
-	transition: { duration: 0.5 },
+	transition: { duration: 0.6, ease: "easeOut" },
 };
 
 const staggerContainer = {
 	animate: {
 		transition: {
-			staggerChildren: 0.1,
+			staggerChildren: 0.15,
 		},
 	},
 };
@@ -22,50 +22,46 @@ export default function HeroSection() {
 	const t = useTranslations("hero");
 
 	return (
-		<section className="relative min-h-screen flex items-center justify-center px-4 py-20">
+		<section className="relative min-h-screen flex items-center px-6 md:px-12 lg:px-20 py-20">
 			<motion.div
 				initial="initial"
 				animate="animate"
 				variants={staggerContainer}
-				className="max-w-4xl w-full text-center"
+				className="max-w-3xl w-full"
 			>
-				<motion.div variants={fadeInUp} className="mb-6">
-					<div className="inline-block p-4 rounded-2xl bg-purple-500 dark:bg-pink-400 mb-4 shadow-[8px_8px_0px_0px_rgba(147,51,234,0.5)]">
-						<Zap className="w-8 h-8 text-white" />
-					</div>
-				</motion.div>
+				<motion.p
+					variants={fadeInUp}
+					className="text-[var(--accent)] font-medium tracking-wide mb-4 text-sm uppercase"
+				>
+					Portfolio
+				</motion.p>
 
 				<motion.h1
 					variants={fadeInUp}
-					className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg"
-					style={{
-						WebkitTextStroke: "8px rgba(0, 0, 0, 0.8)",
-						paintOrder: "stroke fill",
-					}}
+					className="text-5xl md:text-7xl lg:text-8xl mb-6 leading-none tracking-tight font-[var(--font-display)]"
+					style={{ fontFamily: "var(--font-display), sans-serif" }}
 				>
 					{t("greeting")}
 				</motion.h1>
 
 				<motion.p
 					variants={fadeInUp}
-					className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-8 max-w-2xl mx-auto font-semibold"
+					className="text-lg md:text-xl text-[var(--text-muted)] mb-10 max-w-xl leading-relaxed"
 				>
 					{t("tagline")}
 				</motion.p>
 
-				<motion.div
-					variants={fadeInUp}
-					className="flex gap-4 justify-center flex-wrap"
-				>
+				<motion.div variants={fadeInUp} className="flex gap-4 flex-wrap">
 					<a
 						href="#projects"
-						className="px-8 py-3 bg-purple-500 dark:bg-pink-500 text-white rounded-2xl font-semibold hover:translate-y-[-4px] transition-all shadow-[6px_6px_0px_0px_rgba(168,85,247,0.6)] hover:shadow-[8px_8px_0px_0px_rgba(168,85,247,0.6)]"
+						className="group inline-flex items-center gap-2 px-6 py-3 bg-[var(--foreground)] text-[var(--background)] font-medium transition-all duration-300 hover:bg-[var(--accent)] hover:text-white"
 					>
 						{t("viewProjects")}
+						<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
 					</a>
 					<a
 						href="#contact"
-						className="px-8 py-3 bg-white dark:bg-orange-400 text-purple-600 dark:text-white border-3 border-purple-500 dark:border-white rounded-2xl font-semibold hover:translate-y-[-4px] transition-all shadow-[6px_6px_0px_0px_rgba(236,72,153,0.6)] hover:shadow-[8px_8px_0px_0px_rgba(236,72,153,0.6)]"
+						className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--border)] text-[var(--foreground)] font-medium transition-all duration-300 hover:bg-[var(--foreground)] hover:text-[var(--background)] hover:border-[var(--foreground)]"
 					>
 						{t("getInTouch")}
 					</a>
@@ -73,17 +69,17 @@ export default function HeroSection() {
 
 				<motion.div
 					variants={fadeInUp}
-					className="flex gap-6 justify-center mt-12"
+					className="flex gap-5 mt-14 pt-14 border-t border-[var(--border)]"
 				>
 					<a
 						href="https://github.com/codingdrone04"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="p-3 rounded-xl bg-pink-500 dark:bg-purple-500 text-white hover:translate-y-[-2px] transition-all shadow-[4px_4px_0px_0px_rgba(236,72,153,0.6)]"
-						aria-label="GitHub"
+						className="text-[var(--text-muted)] hover:text-[var(--foreground)] transition-colors"
 					>
+						<span className="sr-only">GitHub</span>
 						<svg
-							className="w-6 h-6"
+							className="w-5 h-5"
 							fill="currentColor"
 							viewBox="0 0 24 24"
 							aria-hidden="true"
@@ -97,10 +93,10 @@ export default function HeroSection() {
 					</a>
 					<a
 						href="mailto:contact@codingdrone04.dev"
-						className="p-3 rounded-xl bg-orange-500 dark:bg-orange-400 text-white hover:translate-y-[-2px] transition-all shadow-[4px_4px_0px_0px_rgba(251,146,60,0.6)]"
+						className="text-[var(--text-muted)] hover:text-[var(--foreground)] transition-colors"
 						aria-label="Email"
 					>
-						<Mail className="w-6 h-6" />
+						<Mail className="w-5 h-5" />
 					</a>
 				</motion.div>
 			</motion.div>
