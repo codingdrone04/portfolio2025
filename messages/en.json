@@ -108,7 +108,30 @@
 	},
 	"contact": {
 		"title": "Contact me",
-		"description": "I am always open to new opportunities and collaborations. Whether you have a project in mind or just want to talk tech, don't hesitate to contact me!"
+		"description": "I am always open to new opportunities and collaborations. Whether you have a project in mind or just want to talk tech, don't hesitate to contact me!",
+		"form": {
+			"name": "Name",
+			"namePlaceholder": "Your name",
+			"email": "Email",
+			"emailPlaceholder": "your.email@example.com",
+			"subject": "Subject",
+			"subjectPlaceholder": "What is this about? (optional)",
+			"message": "Message",
+			"messagePlaceholder": "Your message...",
+			"send": "Send message",
+			"sending": "Sending...",
+			"success": "Message sent successfully! I'll get back to you soon.",
+			"error": "Something went wrong. Please try again or email me directly.",
+			"rateLimit": "Too many messages sent. Please wait a moment.",
+			"nameRequired": "Name is required",
+			"nameMaxLength": "Name must be under 100 characters",
+			"emailRequired": "Email is required",
+			"emailInvalid": "Please enter a valid email address",
+			"messageRequired": "Message is required",
+			"messageMaxLength": "Message must be under 5000 characters",
+			"subjectMaxLength": "Subject must be under 200 characters"
+		},
+		"fallback": "Or email me directly at"
 	},
 	"footer": {
 		"builtWith": "Developed with Next.js and deployed on Vercel"
