@@ -31,10 +31,10 @@ export default function ContactSection() {
 					</p>
 
 					<a
-						href="mailto:contact@codingdrone04.dev"
+						href="mailto:codingdronecontact@proton.me"
 						className="group inline-flex items-center gap-2 text-lg font-medium hover:text-[var(--accent)] transition-colors"
 					>
-						contact@codingdrone04.dev
+						codingdronecontact@proton.me
 						<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
 					</a>
 				</motion.div>
