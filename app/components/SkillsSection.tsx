@@ -20,8 +20,8 @@ export default function SkillsSection() {
 	const t = useTranslations("skills");
 
 	return (
-		<section className="relative py-24 px-6 md:px-12 lg:px-20 bg-[var(--accent-muted)]">
-			<div className="max-w-5xl mx-auto">
+		<section className="relative min-h-screen flex items-center py-24 px-6 md:px-12 lg:px-20 bg-[var(--accent-muted)]">
+			<div className="max-w-5xl mx-auto w-full">
 				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}

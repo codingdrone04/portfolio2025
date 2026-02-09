@@ -16,8 +16,8 @@ export default function ProjectsSection() {
 	const projects = t.raw("items") as Project[];
 
 	return (
-		<section id="projects" className="relative py-24 px-6 md:px-12 lg:px-20">
-			<div className="max-w-5xl mx-auto">
+		<section id="projects" className="relative min-h-screen flex items-center py-24 px-6 md:px-12 lg:px-20">
+			<div className="max-w-5xl mx-auto w-full">
 				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}

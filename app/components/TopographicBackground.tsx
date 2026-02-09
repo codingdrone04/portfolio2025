@@ -126,7 +126,7 @@ export default function TopographicBackground() {
 		};
 
 		let time = 0;
-		const cellSize = 10; // Reduced from 30 for smoother lines
+		const cellSize = 5; // Smaller cells = smoother lines
 
 		const animate = () => {
 			time += 0.0005; // Much slower animation (was 0.002)
@@ -150,8 +150,8 @@ export default function TopographicBackground() {
 			// Helper to get noise value at px, py
 			const getValue = (px: number, py: number) => {
 				// Pure ambient noise without mouse interaction
-				// Increased frequency to 0.004 to "zoom out" (more features visible)
-				return noise3D(px * 0.004, py * 0.004, time);
+				// Higher frequency = more zoomed out (more contours visible)
+				return noise3D(px * 0.006, py * 0.006, time);
 			};
 
 			// Marching Squares Algorithm

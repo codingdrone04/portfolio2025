@@ -7,25 +7,41 @@
 	},
 	"about": {
 		"title": "À propos",
-		"location": {
-			"title": "Localisation",
-			"subtitle": "Bayonne → Bordeaux",
-			"description": "Originaire de Bayonne, je suis maintenant basé à Bordeaux où je poursuis mon Master en Développement Logiciel à Ynov."
-		},
+		"intro": "Originaire de Bayonne, je suis maintenant basé à Bordeaux où je poursuis mon Mastère en Développement Logiciel à Ynov, en parallèle de mon alternance chez Uncove.",
+		"present": "présent",
+		"educationTitle": "Formation",
+		"experienceTitle": "Expérience",
 		"education": {
-			"title": "Formation",
-			"openclassrooms": "Bac+2 - Fondamentaux du développement web",
-			"nexa": "Bachelor - Développement Full-Stack",
-			"ynov": "Master - Développement Logiciel"
+			"ynov": "Mastère Développement Logiciel",
+			"nexa": "Bachelor Développeur Web",
+			"openclassrooms": "Formation développement web (Bac+2)",
+			"bordeaux": {
+				"title": "Université de Bordeaux",
+				"description": "Licence cursus informatique (1ère année)"
+			},
+			"pau": {
+				"title": "Université de Pau",
+				"description": "IUT Informatique (1ère année)"
+			}
 		},
-		"work": {
-			"title": "Expérience",
-			"position": "Uncove - Développeur en Alternance",
-			"description": "Conception de microservices en JavaScript, gestion de clusters Docker & Kubernetes, traitement d'encodage vidéo et transactions avec ArangoDB. Maintenance d'interfaces backoffice React."
-		},
-		"philosophy": {
-			"label": "Ma philosophie :",
-			"text": "Un bon logiciel n'est pas seulement fonctionnel : il doit être intuitif et agréable à utiliser. Je conçois des systèmes avec une architecture propre et un design évolutif, en explorant constamment de nouvelles technologies pour résoudre efficacement des défis complexes."
+		"experience": {
+			"uncove": {
+				"role": "Développement & support technique niveau 2",
+				"description": "Administration ArangoDB en prod, microservices Node.js, pipelines CI/CD GitLab, systèmes de détection de fraude, maintenance front-end React."
+			},
+			"drivn": {
+				"role": "Stage développement front-end",
+				"description": "Développement et maintenance d'une interface dashboard optimisée par IA générative."
+			},
+			"paries": {
+				"role": "Vendeur en magasin",
+				"description": "Vente et conseil clientèle, gestion de stocks."
+			},
+			"civique": {
+				"title": "Service Civique",
+				"role": "Volontaire transition énergétique",
+				"description": "Prévention sécurité-gaz, sensibilisation aux éco-gestes."
+			}
 		}
 	},
 	"skills": {
