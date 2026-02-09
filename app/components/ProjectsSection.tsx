@@ -16,14 +16,14 @@ export default function ProjectsSection() {
 	const projects = t.raw("items") as Project[];
 
 	return (
-		<section id="projects" className="relative min-h-screen flex items-center py-24 px-6 md:px-12 lg:px-20">
-			<div className="max-w-5xl mx-auto w-full">
+		<section id="projects" className="relative min-h-screen flex items-center py-8 px-6 md:px-12 lg:px-20">
+			<div className="w-full">
 				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className="mb-16"
+					className="mb-6"
 				>
 					<p className="text-[var(--accent)] font-medium tracking-wide mb-3 text-sm uppercase">
 						Work
@@ -36,7 +36,7 @@ export default function ProjectsSection() {
 					</h2>
 				</motion.div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 					{projects.map((project: Project, index: number) => (
 						<motion.a
 							key={project.title}
@@ -47,16 +47,16 @@ export default function ProjectsSection() {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							viewport={{ once: true, amount: 0.3 }}
-							className="group block p-6 border border-[var(--border)] hover:border-[var(--accent)] transition-colors"
+							className="group block p-5 border border-[var(--border)] hover:border-[var(--accent)] transition-colors"
 						>
-							<div className="flex justify-between items-start mb-4">
+							<div className="flex justify-between items-start mb-2">
 								<h3 className="text-lg font-semibold group-hover:text-[var(--accent)] transition-colors">
 									{project.title}
 								</h3>
 								<ArrowUpRight className="w-4 h-4 text-[var(--text-muted)] group-hover:text-[var(--accent)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
 							</div>
 
-							<p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">
+							<p className="text-[var(--text-muted)] text-sm mb-4 leading-relaxed">
 								{project.description}
 							</p>
 
