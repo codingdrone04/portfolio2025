@@ -125,7 +125,7 @@ export default function ContactSection() {
 		"w-full px-4 py-3 bg-transparent border border-[var(--border)] text-[var(--foreground)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors";
 
 	return (
-		<section id="contact" className="relative min-h-screen flex items-center py-24 px-6 md:px-12 lg:px-20">
+		<section id="contact" className="relative flex-1 flex items-center py-12 px-6 md:px-12 lg:px-20 overflow-y-auto">
 			<div className="max-w-3xl mx-auto w-full">
 				<motion.div
 					initial={{ opacity: 0 }}
