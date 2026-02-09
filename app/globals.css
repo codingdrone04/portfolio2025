@@ -3,85 +3,66 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+	--background: #fefefe;
+	--foreground: #1a1a1a;
+	--accent: #9a7b4f;
+	--accent-light: #c4a574;
+	--accent-muted: rgba(154, 123, 79, 0.1);
+	--text-muted: #6b6b6b;
+	--border: #e5e5e5;
 }
 
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
+	--color-accent: var(--accent);
+	--color-accent-light: var(--accent-light);
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
 }
 
 .dark {
-	--background: #0a0a0a;
-	--foreground: #ededed;
+	--background: #0f0f0f;
+	--foreground: #f5f5f5;
+	--accent: #c4a574;
+	--accent-light: #d4b88a;
+	--accent-muted: rgba(196, 165, 116, 0.1);
+	--text-muted: #a0a0a0;
+	--border: #2a2a2a;
 }
 
 body {
 	background: var(--background);
 	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
-@keyframes blob {
 
-	0%,
-	100% {
-		transform: translate(0, 0) scale(1);
+
+/* Subtle fade animation */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
 	}
 
-	25% {
-		transform: translate(20px, -50px) scale(1.1);
-	}
-
-	50% {
-		transform: translate(-20px, 20px) scale(0.9);
-	}
-
-	75% {
-		transform: translate(50px, 50px) scale(1.05);
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 
-.animate-blob {
-	animation: blob 7s infinite;
+.animate-fade-in {
+	animation: fadeIn 0.6s ease-out forwards;
 }
 
-@keyframes float {
-
-	0%,
-	100% {
-		transform: translateY(0px);
-	}
-
-	50% {
-		transform: translateY(-20px);
-	}
+/* Subtle hover lift */
+.hover-lift {
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-@keyframes pulse {
-
-	0%,
-	100% {
-		transform: scale(1);
-		opacity: 0.6;
-	}
-
-	50% {
-		transform: scale(1.2);
-		opacity: 0.8;
-	}
-}
-
-.interactive-dot {
-	position: absolute;
-	border-radius: 50%;
-	pointer-events: none;
-	transition:
-		transform 0.2s ease-out,
-		opacity 0.3s ease-out;
+.hover-lift:hover {
+	transform: translateY(-2px);
 }
 
 /* Glorp Widget animations */
