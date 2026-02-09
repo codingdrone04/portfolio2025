@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Bebas_Neue } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -14,6 +14,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
 	variable: "--font-geist-mono",
 	subsets: ["latin"],
+});
+
+const bebasNeue = Bebas_Neue({
+	variable: "--font-display",
+	subsets: ["latin"],
+	weight: "400",
 });
 
 export function generateStaticParams() {
@@ -34,7 +40,7 @@ export default async function LocaleLayout({
 	return (
 		<html lang={locale} suppressHydrationWarning>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
+				className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} antialiased relative min-h-screen`}
 			>
 				<ThemeProvider>
 					<NextIntlClientProvider messages={messages}>
