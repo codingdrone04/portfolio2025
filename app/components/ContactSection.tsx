@@ -8,8 +8,8 @@ export default function ContactSection() {
 	const t = useTranslations("contact");
 
 	return (
-		<section id="contact" className="relative py-24 px-6 md:px-12 lg:px-20">
-			<div className="max-w-3xl mx-auto">
+		<section id="contact" className="relative min-h-screen flex items-center py-24 px-6 md:px-12 lg:px-20">
+			<div className="max-w-3xl mx-auto w-full">
 				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}

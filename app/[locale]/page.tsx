@@ -12,18 +12,28 @@ import TopographicBackground from "../components/TopographicBackground";
 
 export default function Home() {
 	return (
-		<div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] relative">
+		<div className="h-screen overflow-y-auto snap-y snap-mandatory bg-[var(--background)] text-[var(--foreground)] relative">
 			<TopographicBackground />
 			<ThemeToggle />
 			<LanguageSwitcher />
 			<main className="relative z-10">
-				<HeroSection />
-				<AboutSection />
-				<SkillsSection />
-				<ProjectsSection />
-				<ContactSection />
+				<section className="snap-start">
+					<HeroSection />
+				</section>
+				<section className="snap-start">
+					<AboutSection />
+				</section>
+				<section className="snap-start">
+					<SkillsSection />
+				</section>
+				<section className="snap-start">
+					<ProjectsSection />
+				</section>
+				<section className="snap-start">
+					<ContactSection />
+					<Footer />
+				</section>
 			</main>
-			<Footer />
 		</div>
 	);
 }
