@@ -14,20 +14,21 @@ export default function ThemeToggle() {
 
 	if (!mounted) {
 		return (
-			<div className="fixed top-6 right-6 z-50 w-14 h-14 rounded-full bg-white dark:bg-slate-800 border-4 border-purple-500 shadow-lg" />
+			<div className="fixed top-6 right-6 z-50 w-10 h-10 border border-[var(--border)] bg-[var(--background)]" />
 		);
 	}
 
 	return (
 		<button
+			type="button"
 			onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-			className="fixed top-6 right-6 z-50 p-3 rounded-full bg-white dark:bg-slate-800 border-4 border-purple-500 shadow-lg hover:shadow-xl transition-all hover:scale-110 active:scale-95"
+			className="fixed top-6 right-6 z-50 p-2.5 border border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)] transition-colors"
 			aria-label="Toggle theme"
 		>
 			{theme === "dark" ? (
-				<Sun className="w-8 h-8 text-yellow-500" />
+				<Sun className="w-5 h-5" />
 			) : (
-				<Moon className="w-8 h-8 text-purple-600" />
+				<Moon className="w-5 h-5" />
 			)}
 		</button>
 	);
