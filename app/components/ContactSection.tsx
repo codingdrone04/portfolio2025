@@ -293,10 +293,10 @@ export default function ContactSection() {
 						<p className="text-[var(--text-muted)] text-sm">
 							{t("fallback")}{" "}
 							<a
-								href="mailto:codingdronecontact@proton.me"
+								href="mailto:contact@cd04.fr"
 								className="group inline-flex items-center gap-1 text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
 							>
-								codingdronecontact@proton.me
+								contact@cd04.fr
 								<ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
 							</a>
 						</p>
