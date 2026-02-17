@@ -140,6 +140,6 @@
 		"fallback": "Ou envoyez-moi un email directement à"
 	},
 	"footer": {
-		"builtWith": "Développé avec Next.js et déployé sur Vercel"
+		"builtWith": "Développé avec Next.js et auto-hébergé"
 	}
 }
