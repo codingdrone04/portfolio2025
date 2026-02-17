@@ -6,16 +6,10 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ssh.cd04.fr
-          username: fr0gman33
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          proxy_host: ssh.cd04.fr
-          script: |
-            cd ~/apps/portfolio
-            git pull origin main
-            docker compose up -d --build
+      - name: Deploy
+        run: |
+          cd ~/apps/portfolio
+          git pull origin main
+          docker compose up -d --build
