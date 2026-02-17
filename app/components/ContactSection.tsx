@@ -10,6 +10,7 @@ interface FormData {
 	email: string;
 	subject: string;
 	message: string;
+	company: string;
 }
 
 interface FormErrors {
@@ -46,6 +47,7 @@ export default function ContactSection() {
 		email: "",
 		subject: "",
 		message: "",
+		company: "",
 	});
 	const [errors, setErrors] = useState<FormErrors>({});
 	const [status, setStatus] = useState<FormStatus>("idle");
@@ -106,7 +108,7 @@ export default function ContactSection() {
 			}
 
 			setStatus("success");
-			setFormData({ name: "", email: "", subject: "", message: "" });
+			setFormData({ name: "", email: "", subject: "", message: "", company: "" });
 			setTimeout(() => setStatus("idle"), 5000);
 		} catch {
 			setStatus("error");
@@ -169,7 +171,21 @@ export default function ContactSection() {
 								variants={staggerContainer}
 								className="space-y-6"
 							>
-								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+								{/* Honeypot field - hidden from humans, visible to bots */}
+							<div aria-hidden="true" style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, overflow: "hidden" }}>
+								<label htmlFor="company">Company</label>
+								<input
+									type="text"
+									id="company"
+									name="company"
+									value={formData.company}
+									onChange={handleChange}
+									tabIndex={-1}
+									autoComplete="off"
+								/>
+							</div>
+
+							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 									<motion.div variants={fadeInUp}>
 										<label htmlFor="name" className="text-sm font-medium mb-1.5 block">
 											{t("form.name")}
