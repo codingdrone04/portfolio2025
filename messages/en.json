@@ -71,44 +71,44 @@
 			{
 				"title": "Rock-Paper-Scissors Microservice",
 				"shortDescription": "Distributed microservices architecture in Java",
-				"description": "A distributed microservices architecture built in Java implementing classic gaming. Includes service discovery, load balancing, and inter-service communication. This project demonstrates enterprise-level design patterns and scalable system architecture, showcasing my ability to build robust backend systems with clear separation of concerns.",
+				"description": "A distributed microservices architecture built in Java implementing the classic game. Includes service discovery, load balancing, and inter-service communication via Spring Boot. Demonstrates enterprise-level design patterns and scalable system architecture.",
 				"tags": ["Java", "Microservices", "Spring Boot", "API REST"],
 				"link": "https://github.com/codingdrone04/rock-paper-scissors-microservice"
 			},
 			{
 				"title": "My Old Grimoire",
 				"shortDescription": "Full-stack book rating platform",
-				"description": "A full-stack book rating platform with user authentication, CRUD operations and image upload functionality. Built with Node.js and Express for the backend with MongoDB for data persistence. Implements secure authentication flows and optimized image management, demonstrating my competence in building complete web applications from database to interface.",
+				"description": "A full-stack book rating platform with user authentication, CRUD operations and image upload. Node.js/Express backend with MongoDB for data persistence. Implements secure authentication flows and optimized image management.",
 				"tags": ["JavaScript", "Node.js", "MongoDB", "Express"],
 				"link": "https://github.com/codingdrone04/Mon-vieux-grimoire"
 			},
 			{
-				"title": "Backend Go Fullstack",
-				"shortDescription": "Complete RESTful backend API with auth",
-				"description": "A complete backend API featuring RESTful architecture and database integration. Includes robust error handling, data validation and secure authentication mechanisms. This project helped me deepen my understanding of backend development best practices and API design principles, bridging the gap between frontend and backend development.",
-				"tags": ["JavaScript", "Node.js", "API REST", "MongoDB"],
-				"link": "https://github.com/codingdrone04/go-fullstack-backend"
+				"title": "Mail Service",
+				"shortDescription": "Lightweight email microservice in Go",
+				"description": "A lightweight microservice written in Go to handle email sending via SMTP. Exposes a REST API with a send endpoint and health check. Used in production for this portfolio's contact form. Designed to be containerized and easily deployable.",
+				"tags": ["Go", "API REST", "SMTP", "Docker"],
+				"link": "https://github.com/codingdrone04/mail-service"
 			},
 			{
-				"title": "Library app",
-				"shortDescription": "Library management in vanilla JavaScript",
-				"description": "An interactive library management system built in vanilla JavaScript, focused on DOM manipulation and local storage. Includes book tracking, reading status updating, and persistent data storage. This project strengthened my fundamental JavaScript skills and understanding of browser APIs before moving on to modern frameworks.",
-				"tags": ["JavaScript", "HTML", "CSS", "Local Storage"],
+				"title": "Library App",
+				"shortDescription": "Mobile library management app",
+				"description": "A mobile library management application built with React Native and Expo. Includes a dedicated backend with a CI/CD pipeline via GitHub Actions for automated testing and deployment to a remote server via SSH and Docker.",
+				"tags": ["React Native", "Expo", "JavaScript", "CI/CD"],
 				"link": "https://github.com/codingdrone04/library-app"
 			},
 			{
-				"title": "Plantanin / Tsarbucks",
-				"shortDescription": "Coffee ordering system simulation in Java",
-				"description": "A Java-based application simulating a coffee ordering system with inventory management. Implements object-oriented programming principles, design patterns and clean code architecture. This project strengthened my foundation in Java and taught me how to build maintainable and scalable applications with proper abstraction and encapsulation.",
-				"tags": ["Java", "POO", "Design Patterns"],
-				"link": "https://github.com/codingdrone04/Plantanin"
+				"title": "BiblioFlow",
+				"shortDescription": "Containerized fullstack TypeScript app",
+				"description": "A fullstack application with frontend, backend and database, fully containerized with Docker Compose. Includes Nginx as a reverse proxy and separate environments for development and CI. Architecture designed for scalability and automated deployment.",
+				"tags": ["TypeScript", "Docker", "Nginx", "Fullstack"],
+				"link": "https://github.com/codingdrone04/biblioflow"
 			},
 			{
-				"title": "Site Portfolio Personnel",
-				"shortDescription": "Responsive portfolio with modular Sass architecture",
-				"description": "A modern, responsive portfolio site built with Sass for advanced styling capabilities. Features a modular CSS architecture with variables, mixins, and nesting for maintainable style sheets. Demonstrates my proficiency in CSS preprocessing and responsive design principles, creating a polished user experience across all devices.",
-				"tags": ["SCSS", "HTML", "Design Responsive"],
-				"link": "https://github.com/codingdrone04/mysite"
+				"title": "Portfolio 2025",
+				"shortDescription": "This portfolio, self-hosted on personal server",
+				"description": "My current portfolio built with Next.js 16, Tailwind CSS v4 and Framer Motion. Bilingual FR/EN with next-intl, deployed via Docker on a self-hosted server accessible through Cloudflare Tunnel. Auto-deploys via GitHub Actions on every push to main.",
+				"tags": ["Next.js", "TypeScript", "Tailwind", "Docker"],
+				"link": "https://github.com/codingdrone04/portfolio2025"
 			}
 		]
 	},
