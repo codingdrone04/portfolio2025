@@ -7,7 +7,7 @@ The Glorp Widget is an interactive, fun pixel-art character generator that displ
 ## Features
 
 ### Core Functionality
-- **Random Character Generation**: Displays one of 6 different pixel-art Glorp characters
+- **Random Character Generation**: Displays a random pixel-art Glorp character, loaded dynamically at runtime from `public/glorps/` (no fixed count)
 - **Interactive Animation**: Click the Glorp Box to generate a new character
 - **Thought Bubble Animation**: Characters appear in an organic, cloud-shaped thought bubble
 - **Thinking Bubbles**: Three animated bubbles appear during generation (mimicking "thinking" animation)
@@ -36,9 +36,8 @@ The Glorp Widget is an interactive, fun pixel-art character generator that displ
 ### Architecture
 
 ```
-GlorpWidget.tsx (149 lines)
+GlorpWidget.tsx (185 lines)
 ├── Constants
-│   ├── GLORP_IMAGES (6 images)
 │   ├── THINKING_BUBBLES (3 bubble configurations)
 │   └── TIMING (4 timing constants)
 ├── State Management
@@ -47,6 +46,7 @@ GlorpWidget.tsx (149 lines)
 │   ├── isVisible
 │   ├── animationKey
 │   ├── isResetting
+│   ├── glorpImages (fetched from /api/glorps)
 │   └── timeoutsRef (cleanup)
 └── Components
     ├── Glorp Box Button
@@ -139,18 +139,7 @@ import GlorpWidget from "../components/GlorpWidget";
 
 ### Adding New Glorps
 
-To add a new Glorp character:
-
-1. Add the PNG file to `public/glorps/`
-2. Add the filename to the `GLORP_IMAGES` array:
-
-```typescript
-const GLORP_IMAGES = [
-    "babyglorp.png",
-    // ... existing glorps
-    "newglorp.png"  // Add here
-];
-```
+Just drop a PNG file into `public/glorps/`. The list is loaded dynamically at runtime via the `/api/glorps` route (`app/api/glorps/route.ts`), which returns every `.png` in that folder except `glorpbox.png` and dotfiles — **no code change required**.
 
 ### Customizing Animations
 
@@ -277,5 +266,5 @@ Glorp characters are pixel art assets.
 
 ---
 
-**Last Updated**: December 2025
-**Version**: 1.0.0
+**Last Updated**: May 2026
+**Version**: 1.1.0 (dynamic image loading via /api/glorps)
