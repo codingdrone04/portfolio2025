@@ -20,6 +20,12 @@ bun install
 bun run dev
 ```
 
+## Environment
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `NEXT_PUBLIC_CONTACT_API_URL` | `https://mail.cd04.fr` | Base URL of the [mail service](https://github.com/codingdrone04/mail-service) the contact form POSTs to (`/send`). Baked at build time (see `Dockerfile`). |
+
 ## Deployment
 
 Deployed via Docker on a self-hosted server, accessible through Cloudflare Tunnel.
